@@ -1,31 +1,28 @@
 using FluentAssertions;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.TestHost;
-using RetornaTaxaWebApi;
+using Microsoft.AspNetCore.Mvc.Testing;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace End2EndTests
 {
-    public class RetornaTaxaETest
+    public class RetornaTaxaETest : IClassFixture<WebApplicationFactory<RetornaTaxaWebApi.Startup>>
     {
-        private readonly TestServer _server;
-        private readonly HttpClient _client;
+        private readonly WebApplicationFactory<RetornaTaxaWebApi.Startup> _factory;
 
-        public RetornaTaxaETest()
+        public RetornaTaxaETest(WebApplicationFactory<RetornaTaxaWebApi.Startup> factory)
         {
-            // Arrange
-            _server = new TestServer(new WebHostBuilder().UseStartup<Startup>());
-            _client = _server.CreateClient();
+            _factory = factory;
         }
 
         [Fact]
         public async Task RetornaTaxa_Get_OkResponse()
         {
+            // Arrange
+            var client = _factory.CreateClient();
+
             // Act
-            var response = await _client.GetAsync("api/RetornaTaxa");
+            var response = await client.GetAsync("api/RetornaTaxa");
 
             // Assert
             response.EnsureSuccessStatusCode();

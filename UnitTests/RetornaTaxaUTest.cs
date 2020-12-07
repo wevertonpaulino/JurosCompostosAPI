@@ -5,7 +5,7 @@ namespace UnitTests
 {
     public class RetornaTaxaUTest
     {
-        RetornaTaxaController _controller;
+        private readonly RetornaTaxaController _controller;
 
         public RetornaTaxaUTest()
         {
