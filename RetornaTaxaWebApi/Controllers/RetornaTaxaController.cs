@@ -1,16 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace RetornaTaxaWebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/RetornaTaxa")]
     [ApiController]
     public class RetornaTaxaController : ControllerBase
     {
+        // GET: api/RetornaTaxa
         [HttpGet]
         public decimal Get()
         {
