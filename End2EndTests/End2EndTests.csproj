@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CalculaJurosWebApi\CalculaJurosWebApi.csproj" />
     <ProjectReference Include="..\RetornaTaxaWebApi\RetornaTaxaWebApi.csproj" />
   </ItemGroup>
 

@@ -1,19 +1,23 @@
-﻿using Xunit;
+﻿using CalculaJurosWebApi.Controllers;
+using CalculaJurosWebApi.Services;
+using Xunit;
 
 namespace IntegrationTests
 {
     public class CalculaJurosITest
     {
-        CalculaJurosController _controller;
+        private readonly CalculaJurosController _controller;
+        private readonly RetornaTaxaService _service;
 
         public CalculaJurosITest()
         {
-            _controller = new CalculaJurosController();
+            _service = new RetornaTaxaService();
+            _controller = new CalculaJurosController(_service);
         }
 
         [Theory]
         [InlineData(100, 5)]
-        public void CalculaJuros_Get_ValorCalculador(decimal valorInicial, int meses)
+        public void CalculaJuros_Get_ValorCalculado(decimal valorInicial, int meses)
         {
             // Arrange
             var expected = 105.10m;

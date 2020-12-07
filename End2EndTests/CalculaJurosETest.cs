@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using CalculaJurosWebApi;
+using FluentAssertions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using System.Net;
