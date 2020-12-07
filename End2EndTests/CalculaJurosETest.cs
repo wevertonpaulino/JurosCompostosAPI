@@ -1,32 +1,29 @@
-﻿using CalculaJurosWebApi;
-using FluentAssertions;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.TestHost;
+﻿using FluentAssertions;
+using Microsoft.AspNetCore.Mvc.Testing;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace End2EndTests
 {
-    public class CalculaJurosETest
+    public class CalculaJurosETest : IClassFixture<WebApplicationFactory<CalculaJurosWebApi.Startup>>
     {
-        private readonly TestServer _server;
-        private readonly HttpClient _client;
+        private readonly WebApplicationFactory<CalculaJurosWebApi.Startup> _factory;
 
-        public CalculaJurosETest()
+        public CalculaJurosETest(WebApplicationFactory<CalculaJurosWebApi.Startup> factory)
         {
-            // Arrange
-            _server = new TestServer(new WebHostBuilder().UseStartup<Startup>());
-            _client = _server.CreateClient();
+            _factory = factory;
         }
 
         [Theory]
         [InlineData(100, 5)]
         public async Task RetornaTaxa_Get_OkResponse(decimal valorInicial, int meses)
         {
+            // Arrange
+            var client = _factory.CreateClient();
+
             // Act
-            var response = await _client.GetAsync($"api/CalculaJuros?valorInicial{valorInicial}&meses={meses}");
+            var response = await client.GetAsync($"api/CalculaJuros?valorInicial{valorInicial}&meses={meses}");
 
             // Assert
             response.EnsureSuccessStatusCode();

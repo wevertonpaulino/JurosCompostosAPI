@@ -1,16 +1,10 @@
 ﻿using CalculaJurosWebApi.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace CalculaJurosWebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/CalculaJuros")]
     [ApiController]
     public class CalculaJurosController : ControllerBase
     {
@@ -21,14 +15,24 @@ namespace CalculaJurosWebApi.Controllers
             _retornaTaxaService = retornaTaxaService;
         }
 
+        // GET: api/CalculaJuros?valorInicial=100&meses=5
         [HttpGet]
         public decimal Get(decimal valorInicial, int meses)
         {
-            var taxaJuros = _retornaTaxaService.Get();
+            var taxaJuros = _retornaTaxaService.Get().Result;
             var value = valorInicial * (decimal)Math.Pow(1 + (double)taxaJuros, meses);
-            var result = Math.Truncate(100 * value) / 100;
+            var result = TruncateDecimal(value, 2);
 
             return result;
+        }
+
+        [NonAction]
+        public decimal TruncateDecimal(decimal value, int precision)
+        {
+            decimal step = (decimal)Math.Pow(10, precision);
+            decimal temp = Math.Truncate(step * value);
+
+            return temp / step;
         }
     }
 }

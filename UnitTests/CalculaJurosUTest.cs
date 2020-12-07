@@ -13,7 +13,7 @@ namespace UnitTests
             // Arrange
             var expected = 105.10m;
             var mock = new Mock<IRetornaTaxaService>();
-            mock.Setup(x => x.Get()).Returns(0.01m);
+            mock.Setup(x => x.Get()).ReturnsAsync(0.01m);
             var controller = new CalculaJurosController(mock.Object);
 
             // Act
