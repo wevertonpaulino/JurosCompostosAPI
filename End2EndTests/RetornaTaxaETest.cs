@@ -1,6 +1,7 @@
 using FluentAssertions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
+using RetornaTaxaWebApi;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace End2EndTests
         public RetornaTaxaETest()
         {
             // Arrange
-            _server = new TestServer(new WebHostBuilder().UseStartup<StartUp>());
+            _server = new TestServer(new WebHostBuilder().UseStartup<Startup>());
             _client = _server.CreateClient();
         }
 

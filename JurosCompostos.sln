@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\Unit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "End2EndTests", "End2EndTests\End2EndTests.csproj", "{F01D677E-9E87-44E2-B460-C3F04B893179}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{446217A4-6B63-4BC4-B842-E827360A1AA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetornaTaxaWebApi", "RetornaTaxaWebApi\RetornaTaxaWebApi.csproj", "{BA1D93EC-20FF-4610-BBE3-CF061E84B9C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +34,10 @@ Global
 		{F01D677E-9E87-44E2-B460-C3F04B893179}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F01D677E-9E87-44E2-B460-C3F04B893179}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F01D677E-9E87-44E2-B460-C3F04B893179}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA1D93EC-20FF-4610-BBE3-CF061E84B9C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA1D93EC-20FF-4610-BBE3-CF061E84B9C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA1D93EC-20FF-4610-BBE3-CF061E84B9C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA1D93EC-20FF-4610-BBE3-CF061E84B9C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +45,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AFE2ACE6-6A43-4D4C-A146-16F09E0D16DC} = {219594BC-488B-46A7-82C3-2E35D47972D8}
 		{F01D677E-9E87-44E2-B460-C3F04B893179} = {219594BC-488B-46A7-82C3-2E35D47972D8}
+		{BA1D93EC-20FF-4610-BBE3-CF061E84B9C5} = {446217A4-6B63-4BC4-B842-E827360A1AA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {44D3BEF9-7E24-42A5-A5DC-E01FF6CCF9BF}
