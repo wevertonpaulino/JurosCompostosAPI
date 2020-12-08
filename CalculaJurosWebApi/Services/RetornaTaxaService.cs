@@ -11,7 +11,7 @@ namespace CalculaJurosWebApi.Services
         {
             var taxaJuros = 0m;
 
-            using (var httpClient = new HttpClient { BaseAddress = new Uri("http://localhost:58257/") })
+            using (var httpClient = new HttpClient { BaseAddress = new Uri("http://localhost:5000/") })
             {
                 using (var response = await httpClient.GetAsync("api/RetornaTaxa"))
                 {

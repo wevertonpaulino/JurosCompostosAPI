@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  retornataxawebapi:
+    image: ${DOCKER_REGISTRY-}retornataxawebapi
+    build:
+      context: .
+      dockerfile: RetornaTaxaWebApi/Dockerfile
+
+  calculajuroswebapi:
+    image: ${DOCKER_REGISTRY-}calculajuroswebapi
+    build:
+      context: .
+      dockerfile: CalculaJurosWebApi/Dockerfile
+
