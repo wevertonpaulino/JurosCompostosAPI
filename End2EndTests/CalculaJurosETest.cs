@@ -17,7 +17,7 @@ namespace End2EndTests
 
         [Theory]
         [InlineData(100, 5)]
-        public async Task RetornaTaxa_Get_OkResponse(decimal valorInicial, int meses)
+        public async Task CalculaJuros_Get_OkResponse(decimal valorInicial, int meses)
         {
             // Arrange
             var client = _factory.CreateClient();
