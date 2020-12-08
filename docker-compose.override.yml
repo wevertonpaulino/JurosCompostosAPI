@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  retornataxawebapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+  calculajuroswebapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "443"
+
