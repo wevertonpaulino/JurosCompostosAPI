@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using CalculaJurosWebApi.Controllers;
+using Xunit;
 
 namespace UnitTests
 {
