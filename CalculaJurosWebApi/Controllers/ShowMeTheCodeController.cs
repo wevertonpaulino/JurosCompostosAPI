@@ -6,6 +6,7 @@ namespace CalculaJurosWebApi.Controllers
     [ApiController]
     public class ShowMeTheCodeController : ControllerBase
     {
+        // GET: api/ShowMeTheCode
         [HttpGet]
         public string Get()
         {
