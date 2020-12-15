@@ -3,10 +3,10 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>0d78ea9a-45af-48b3-914f-0afe18fc18e1</ProjectGuid>
+    <ProjectGuid>f10beade-d59a-4eb2-b54a-a9295710c4bf</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
-    <DockerServiceName>retornataxawebapi</DockerServiceName>
+    <DockerServiceName>calculajuroswebapi</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
