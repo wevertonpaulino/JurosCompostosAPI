@@ -1,6 +1,5 @@
-﻿using System;
-using System.Globalization;
-using System.Net.Http;
+﻿using CalculaJurosWebApi.Abstractions;
+using Refit;
 using System.Threading.Tasks;
 
 namespace CalculaJurosWebApi.Services
@@ -9,21 +8,9 @@ namespace CalculaJurosWebApi.Services
     {
         public async Task<decimal> Get()
         {
-            var taxaJuros = 0m;
+            var api = RestService.For<IRetornaTaxaApi>("http://retornataxawebapi:80");
 
-            using (var httpClient = new HttpClient { BaseAddress = new Uri("http://localhost:5000/") })
-            {
-                using (var response = await httpClient.GetAsync("api/RetornaTaxa"))
-                {
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var responseString = await response.Content.ReadAsStringAsync();
-                        taxaJuros = Decimal.Parse(responseString, NumberStyles.Number, new CultureInfo("en-US"));
-                    }
-                }
-            }
-
-            return taxaJuros;
+            return await api.Get();
         }
     }
 }
