@@ -10,9 +10,7 @@ namespace CalculaJurosWebApi.Controllers
         [HttpGet]
         public string Get()
         {
-            var url = "https://github.com/wevertonpaulino/juros-compostos-csharp";
-
-            return url;
+            return "https://github.com/wevertonpaulino/juros-compostos-api";
         }
     }
 }
