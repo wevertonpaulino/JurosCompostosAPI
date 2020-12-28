@@ -32,4 +32,4 @@ Exemplo: /api/CalculaJuros?valorInicial=100&meses=5, resultado esperado: 105,10.
 
 ### 2) Show me the code
 
-Este responde pelo path relativo /showMeTheCode e deverá retornar a url de onde encontra-se o fonte no github.
+Este responde pelo path relativo /api/ShowMeTheCode e deverá retornar a url de onde encontra-se o fonte no github.
