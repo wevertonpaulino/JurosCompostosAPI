@@ -1,4 +1,4 @@
-# Juros Compostos API
+# JurosCompostosAPI
 
 ## API 1
 
