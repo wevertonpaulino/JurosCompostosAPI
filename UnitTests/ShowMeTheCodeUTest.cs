@@ -16,7 +16,7 @@ namespace UnitTests
         public void ShowMeTheCode_Get_Url()
         {
             // Arrange
-            var expected = "https://github.com/wevertonpaulino/juros-compostos-csharp";
+            var expected = "https://github.com/wevertonpaulino/JurosCompostosAPI";
 
             // Act
             var actual = _controller.Get();

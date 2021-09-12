@@ -18,15 +18,11 @@ Responde pelo path relativo "/api/CalculaJuros".
 
 Realiza um cálculo em memória, de juros compostos, conforme abaixo:
 
-Valor Final = Valor Inicial * (1 + juros) ^ Tempo (^ representa a operação de potência).
-
-Valor inicial é um decimal recebido como parâmetro.
-
-Valor do Juros deve ser consultado na API 1.
-
-Tempo é um inteiro, que representa meses, também recebido como parâmetro.
-
-Resultado final deve ser truncado (sem arredondamento) em duas casas decimais.
+- Valor Final = Valor Inicial * (1 + juros) ^ Tempo (^ representa a operação de potência);
+- Valor inicial é um decimal recebido como parâmetro;
+- Valor do Juros deve ser consultado na API 1;
+- Tempo é um inteiro, que representa meses, também recebido como parâmetro;
+- Resultado final deve ser truncado (sem arredondamento) em duas casas decimais.
 
 Exemplo: /api/CalculaJuros?valorInicial=100&meses=5, resultado esperado: 105,10.
 

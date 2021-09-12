@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace CalculaJurosWebApi.Controllers
 {
@@ -10,7 +11,7 @@ namespace CalculaJurosWebApi.Controllers
         [HttpGet]
         public string Get()
         {
-            return "https://github.com/wevertonpaulino/juros-compostos-api";
+            return "https://github.com/wevertonpaulino/JurosCompostosAPI";
         }
     }
 }

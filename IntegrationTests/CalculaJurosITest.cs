@@ -1,5 +1,6 @@
 ﻿using CalculaJurosWebApi.Controllers;
 using CalculaJurosWebApi.Services;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace IntegrationTests
@@ -17,13 +18,13 @@ namespace IntegrationTests
 
         [Theory]
         [InlineData(100, 5)]
-        public void CalculaJuros_Get_ValorCalculado(decimal valorInicial, int meses)
+        public async Task CalculaJuros_Get_ValorCalculado(decimal valorInicial, int meses)
         {
             // Arrange
             var expected = 105.10m;
 
             // Act
-            var actual = _controller.Get(valorInicial, meses);
+            var actual = await _controller.GetAsync(valorInicial, meses);
 
             // Assert
             Assert.Equal(expected, actual);

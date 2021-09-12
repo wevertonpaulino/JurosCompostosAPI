@@ -6,9 +6,9 @@ namespace CalculaJurosWebApi.Services
 {
     public class RetornaTaxaService : IRetornaTaxaService
     {
-        public async Task<decimal> Get()
+        public async Task<decimal> GetAsync()
         {
-            var api = RestService.For<IRetornaTaxaApi>("http://retornataxawebapi:80");
+            var api = RestService.For<IRetornaTaxaApi>("http://localhost:58257/");
 
             return await api.Get();
         }

@@ -4,6 +4,6 @@ namespace CalculaJurosWebApi.Services
 {
     public interface IRetornaTaxaService
     {
-        Task<decimal> Get();
+        Task<decimal> GetAsync();
     }
 }
